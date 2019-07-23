@@ -20,6 +20,6 @@ public class SimpleMailAutoConfiguration {
 		if (properties.getHostname() == null || properties.getHostname().length() == 0) {
 			properties.setHostname("smtp." + properties.getUsername().split("@")[1]);
 		}
-		return new SimpleMailSender(properties.getHostname(), properties.getUsername(), properties.getPassword());
+		return new SimpleMailSender(properties.getHostname(), properties.getUsername(), properties.getPassword(), properties.getDefaultRecipients());
 	}
 }
